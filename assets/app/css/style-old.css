@@ -1,0 +1,796 @@
+/*-----------------------------------------------------------------
+[Master Stylesheet]
+
+Project:    Dynasty - Responsive Coming Soon Template
+Version:    1.0
+Autor:      -SitoWeb-
+http://themeforest.net/user/-SitoWeb-
+
+
+[Table of contents]
+
+1. General
+2. Loader page / #preloader
+3. Home page / #home-page
+4. About page / #sms-login
+5. Team page / #twitter-login
+6. Newsletters page / #instagram-login
+7. Contact page / #premium
+8. Navigation menu / .outer-nav
+9. Footer / footer
+10. Responsive layout
+
+
+[Color codes]
+
+Background:         #243342 (Dark Blue)
+Pages Background:   #22313F (Ebony Clay) / #2C3E50 (Madison)
+Text:               #FFF (white)
+
+-------------------------------------------------------------------
+1. General
+------------------------------------------------------------------- */
+body {
+    color: #FFF;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+html, .perspective {
+    width: 100%;
+    height: 100%;
+}
+.dynasty-pages {
+    background-color: #22313F;
+    background-image: linear-gradient(120deg, #22313F, #22313F 50%, #2C3E50 50%, #2C3E50 100%);
+    min-height: 100%;
+    -ms-overflow-y: hidden;
+}
+#wrapper {
+    text-align: center;
+}
+header {
+    text-align: left;
+}
+header .my-fa-icon {
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: #FFF;
+    cursor: pointer;
+    transition: all .3s ease 0s;
+    -webkit-transition: all .3s ease 0s;
+}
+.shape {
+    overflow: hidden;
+}
+#info-box-close-button {
+    float: right;
+}
+#info-box-close-button,
+#home-page, 
+#sms-login,
+#normal-login,
+#twitter-login,
+#instagram-login,
+#premium,
+#id-login,
+#login-signup{
+    opacity: 0;
+    transition: all .5s ease 0s;
+    -webkit-transition: all .5s ease 0s;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+}
+#info-box-close-button.active-page,
+#home-page.active-page,
+#sms-login.active-page,
+#normal-login.active-page,
+#twitter-login.active-page,
+#instagram-login.active-page,
+#premium.active-page,
+#id-login.active-page,
+#login-signup.active-page{
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+}
+.no-csstransforms3d #info-box-close-button,
+.no-csstransforms3d #home-page, 
+.no-csstransforms3d #sms-login,
+.no-csstransforms3d #normal-login,
+.no-csstransforms3d #twitter-login,
+.no-csstransforms3d #instagram-login,
+.no-csstransforms3d #premium,
+.no-csstransforms3d #id-login,
+.no-csstransforms3d #login-signup{
+    display: none;
+}
+.no-csstransforms3d #info-box-close-button.active-page,
+.no-csstransforms3d #home-page.active-page,
+.no-csstransforms3d #sms-login.active-page,
+.no-csstransforms3d #normal-login.active-page,
+.no-csstransforms3d #twitter-login.active-page,
+.no-csstransforms3d #instagram-login.active-page,
+.no-csstransforms3d #premium.active-page,
+.no-csstransforms3d #id-login.active-page,
+.no-csstransforms3d #login-signup.active-page{
+    display: block
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.perspective {
+    min-height: 410px;
+}
+#pages {
+    min-height: 100%;
+    z-index: 10;
+    transform: translateZ(0) translateX(0) rotateY(0deg);
+    -webkit-transform: translateZ(0) translateX(0) rotateY(0deg);
+    -ms-transform: translateZ(0) translateX(0) rotateY(0deg);
+}
+#pages::after {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    opacity: 0;
+    transition: opacity 0.4s, height 0s 0.4s;
+    -webkit-transition: opacity 0.4s, height 0s 0.4s;
+}
+.component {
+    margin: 0 auto;
+    width: 60%;
+    text-align: justify;
+    font-size: 1.5em;
+}
+.perspective.modalview {
+    overflow-x: hidden;
+    perspective: 1500px;
+    -webkit-perspective: 1500px;
+    -ms-perspective: 1500px;
+}
+.modalview #pages {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.modalview .wrapper {
+    transform: translateZ(-1px);
+    -webkit-transform: translateZ(-1px);
+    -ms-transform: translateZ(-1px);
+}
+.animate #pages::after {
+    opacity: 1;
+    height: 101%;
+    transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+}
+.info-box {
+    top: 80px;
+    left: 0;
+    text-align: left;
+    padding: 0 20px 10px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+.box-container {
+    max-width: 1130px;
+    margin: 0 auto;
+}
+.info-box a {
+    text-decoration: none;
+}
+a.dynasty-link {
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+.info-box h1{
+    margin: 45px auto;
+    font-weight: 400;
+    font-size: 60px;
+    text-transform: uppercase;
+}
+.info-box h2{
+    margin: 30px 0;
+}
+
+.padding-10 {
+    padding: 0 10px;
+}
+/*-----------------------------------------------------------------
+2. Loader page / #preloader
+------------------------------------------------------------------- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    text-align: center;
+    visibility: hidden;
+    display: block;
+}
+#preloader.show {
+    visibility: visible;
+}
+#preloader svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+#preloader svg path {
+    fill: #243342;
+}
+#preloader .logo-loading {
+    position: absolute;
+    top: 50%;
+    margin: -110px 0 0;
+    width: 100%;
+}
+#preloader h1{
+    margin: 0 0 40px;
+}
+
+/*-----------------------------------------------------------------
+3. Home page / #home-page
+------------------------------------------------------------------- */
+.logo {
+    font-size: 48px;
+    line-height: 72px;
+    color: #FFF;
+}
+.logo-loading h1 img, .logo img {
+    max-height: 48px;
+}
+#title span {
+    line-height: 216px;
+    font-size: 40px;
+    font-weight: 300;
+}
+#title span strong {
+    font-weight: 700;
+}
+#timer {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.is-countdown {
+    text-align: center;
+}
+.countdown-rtl {
+    direction: rtl;
+}
+.countdown-holding span {
+    color: #FFF;
+}
+.countdown-row {
+    clear: both;
+    width: 100%;
+    text-align: center;
+}
+.countdown-show1 .countdown-section,
+.countdown-show2 .countdown-section,
+.countdown-show3 .countdown-section,
+.countdown-show4 .countdown-section,
+.countdown-show5 .countdown-section,
+.countdown-show6 .countdown-section,
+.countdown-show7 .countdown-section {
+    width: 100px;
+    height: 100px;
+    padding-top: 17px;
+    display: inline-block;
+}
+.countdown-section {
+    display: block;
+    margin: 1px;
+    font-size: 75%;
+    text-align: center;
+    overflow: hidden;
+}
+.countdown-amount {
+    font-size: 32px;
+    font-weight: 700;
+}
+.countdown-period {
+    display: block;
+    text-transform: uppercase;
+    font-size: 9px;
+}
+.countdown-descr {
+    display: block;
+    width: 100%;
+}
+#description {
+    font-size: 18px;
+    margin: 45px 15px;
+}
+
+/*-----------------------------------------------------------------
+4. SMS Login / #sms-login
+------------------------------------------------------------------- */
+#sms-login, #twitter-login, #instagram-login, #premium, #id-login {
+    font-size: 18px;
+    line-height: 32px;
+}
+.about-mini-box {
+    margin: 60px 0 30px;
+}
+.about-mini-box .fa {
+    font-size: 40px;
+    top: 5px;
+    left: 30px;
+    position: absolute;
+}
+.about-mini-box-content {
+    margin-left: 60px;
+}
+.about-mini-box-title {
+    font-size: 25px;
+}
+.about-mini-box-subtitle {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 15px;
+}
+
+.try-again-sms{
+	margin-bottom: 20px;
+}
+
+#normal-login .sms-soon-counter .soon-label{
+	display: none;
+}
+
+.number-msg-valid {
+	display: none;
+	color: #00C900;
+}
+
+.number-msg-error {
+	display: none;
+	color: red;
+}
+/*-----------------------------------------------------------------
+5. Twitter Login / #twitter-login
+------------------------------------------------------------------- */
+#twitter-login .team-description {
+    margin: 55px 0;
+}
+.people {
+    position: relative;
+    max-width: 340px;
+    margin: 0 auto 35px;
+}
+.people-image {
+    position: relative;
+    width: 100%;
+}
+.people img {
+    max-width: 100%;
+}
+.people .people-image-overlay {
+    background-color: rgba(34, 49, 63, 0.5);
+    background-image: linear-gradient(120deg, rgba(34, 49, 63, 0.5), rgba(34, 49, 63, 0.5) 50%, rgba(44, 62, 80, 0.5) 50%, rgba(44, 62, 80, 0.5) 100%);
+    position: absolute;
+    top: 0;
+    margin: 5%;
+    width: 90%;
+    height: 90%;
+    opacity: 0;
+    padding-top: 30%;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+.people .people-image-overlay a:hover {
+    text-decoration: none;
+}
+.people .people-image-overlay .fa {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    color: #FFF;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+.people:hover .people-image-overlay {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+}
+.people .people-nema {
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 20px;
+}
+.people .people-title {
+    line-height: 15px;
+}
+.people .people-desciption {
+    margin-top: 25px;
+}
+
+/*-----------------------------------------------------------------
+6. Instagram / #instagram-login
+------------------------------------------------------------------- */
+#instagram-login #subscribe {
+    margin-top: 45px;
+}
+#subscribe form {
+    margin: 100px 0 30px;
+}
+input, textarea {
+    font-size: 18px;
+    height: 42px;
+    padding: 5px 10px;
+    border: none;
+    background: none;
+}
+button {
+    background: none;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+}
+button:hover {
+    color: #FFF;
+}
+#subscribe input {
+    width: 100%;
+}
+#subscribe .input-icon {
+    width: 500px;
+    margin-right: 25px;
+}
+#subscribe button, #premium button {
+    padding: 5px 35px;
+}
+.alert-container {
+    width: 100%;
+    min-height: 90px;
+}
+.alert {
+    margin: 20px 0 15px;
+    text-align: center;
+    border: 0;
+    position: relative;
+    opacity: 0;
+    transition: all .5s ease 0s;
+    -webkit-transition: all .5s ease 0s;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+}
+.alert .fa {
+    display: none;
+}
+.active-alert {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+}
+.alert-text {
+    margin-left: 10px;
+}
+.alert-success {
+    color: #03A678;
+    background: none;
+}
+.alert-warning {
+    color: #F39C12;
+    background: none;
+}
+.alert-success .fa-check,
+.alert-warning .fa-warning {
+    display: inline-block;
+}
+
+
+/*-----------------------------------------------------------------
+7. Premium / #premium
+------------------------------------------------------------------- */
+#premium .contact-box {
+    text-align: left;
+}
+#premium .contact-box .contact-icon {
+    font-size: 22px;
+    width: 42px;
+    text-align: center;
+}
+.input-icon {
+    width: 100%;
+    position: relative;
+}
+.input-icon:before {
+    position: absolute;
+    font-size: 22px;
+    text-align: center;
+    width: 45px;
+    top: 8px;
+    left: 0px;
+}
+.input-icon input,
+.input-icon textarea {
+    text-indent: 50px;
+}
+#premium .contact-box input,
+#premium .contact-box textArea {
+    width: 100%;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.contact-box textArea {
+    height: 120px;
+}
+.contact-box p.text-justify {
+    margin-bottom: 40px;
+}
+
+
+/*-----------------------------------------------------------------
+8. Navigation menu / .outer-nav
+------------------------------------------------------------------- */
+.outer-nav {
+    z-index: -1;
+    position: absolute;
+    height: auto;
+    font-size: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    left: 20%;
+}
+.no-csstransforms3d .outer-nav {
+    position: static;
+    display: none;
+    transform: none;
+    -ms-transform: none;
+    transform-style: flat;
+    -ms-transform-style: none;
+}
+.ca-menu {
+    padding:0;
+    margin:20px auto;
+}
+.ca-menu li {
+    width: 280px;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    margin-bottom: 25px;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+}
+.ca-menu li:last-child {
+    margin-bottom: 0px;
+}
+.ca-menu li a.menu-item {
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.ca-menu li a:hover {
+    text-decoration: none;
+}
+.ca-icon {
+    font-family: cursive;
+    font-size: 28px;
+    color: #22313F;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 60px;
+    position: absolute;
+    width: 60px;
+    overflow: hidden;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+}
+.ca-content {
+    position: absolute;
+    left: 80px;
+    height: 50px;
+    top: 10px;
+}
+.ca-main {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    color: #FFF;
+}
+.ca-sub {
+    margin: 0;
+    font-size: 14px;
+    color: #22313F;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+}
+.no-csstransforms3d .ca-menu li:hover .ca-main {
+    color: #243342;
+}
+.ca-menu li:hover .ca-main{
+    opacity: 1;
+    -webkit-animation: moveFromTop .3s ease-in-out;
+    -moz-animation: moveFromTop .3s ease-in-out;
+    -ms-animation: moveFromTop .3s ease-in-out;
+}
+.ca-menu li:hover .ca-sub{
+    opacity: 1;
+    -webkit-animation: moveFromBottom .3s ease-in-out;
+    -moz-animation: moveFromBottom .3s ease-in-out;
+    -ms-animation: moveFromBottom .3s ease-in-out;
+}
+@-webkit-keyframes moveFromBottom {
+    from {
+    opacity: 0;
+    -webkit-transform: translateY(200%);
+}
+to {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+}
+}
+@-moz-keyframes moveFromBottom {
+    from {
+    opacity: 0;
+    -moz-transform: translateY(200%);
+}
+to {
+    opacity: 1;
+    -moz-transform: translateY(0%);
+}
+}
+@-ms-keyframes moveFromBottom {
+    from {
+    opacity: 0;
+    -ms-transform: translateY(200%);
+}
+to {
+    opacity: 1;
+    -ms-transform: translateY(0%);
+}
+}
+@-webkit-keyframes moveFromTop {
+    from {
+    opacity: 0;
+    -webkit-transform: translateY(-200%);
+}
+to {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+}
+}
+@-moz-keyframes moveFromTop {
+    from {
+    opacity: 0;
+    -moz-transform: translateY(-200%);
+}
+to {
+    opacity: 1;
+    -moz-transform: translateY(0%);
+}
+}
+@-ms-keyframes moveFromTop {
+    from {
+    opacity: 0;
+    -ms-transform: translateY(-200%);
+}
+to {
+    opacity: 1;
+    -ms-transform: translateY(0%);
+}
+}
+.effect-airbnb {
+    background-color: #243342;
+}
+.effect-airbnb #pages {
+    transition: transform 0.4s;
+    -webkit-transition: -webkit-transform 0.4s;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+.effect-airbnb.animate #pages {
+    -webkit-transform: translateZ(-1500px) translateX(60%) rotateY(-30deg);
+    transform: translateZ(-1500px) translateX(60%) rotateY(-30deg);
+    opacity: 0.9;
+}
+.no-csstransforms3d .effect-airbnb.animate #pages {
+    left: 320px;
+    position: absolute;
+}
+.no-csstransforms3d .effect-airbnb.animate .outer-nav {
+    display: block;
+}
+.effect-airbnb .outer-nav li {
+    opacity: 0;
+    -webkit-transform: translateX(-150px);
+    transform: translateX(-150px);
+    -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+    transition: transform 0.4s, opacity 0.4s;
+}
+.effect-airbnb.animate .outer-nav li {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+.effect-airbnb.animate .outer-nav li:nth-child(2) {
+    -webkit-transition-delay: 0.04s;
+    transition-delay: 0.04s;
+}
+.effect-airbnb.animate .outer-nav li:nth-child(3) {
+    -webkit-transition-delay: 0.08s;
+    transition-delay: 0.08s;
+}
+.effect-airbnb.animate .outer-nav li:nth-child(4) {
+    -webkit-transition-delay: 0.12s;
+    transition-delay: 0.12s;
+}
+.effect-airbnb.animate .outer-nav li:nth-child(5) {
+    -webkit-transition-delay: 0.16s;
+    transition-delay: 0.16s;
+}
+.effect-airbnb.animate .outer-nav li:nth-child(6) {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+.effect-airbnb.animate .outer-nav li:nth-child(7) {
+    -webkit-transition-delay: 0.24s;
+    transition-delay: 0.24s;
+}
+
+
+/*-------------------------------------------------------------------
+9. Footer / footer
+------------------------------------------------------------------- */
+footer {
+    position: absolute;
+    bottom: 2px;
+    text-align: center;
+    width: 100%;
+    z-index: -1;
+}
+#external-links a .my-fa-icon {
+    color: #FFF;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    transition: all .3s ease 0s;
+    -webkit-transition: all .3s ease 0s;
+    opacity: 0;
+}
+.animate #external-links a .my-fa-icon {
+    opacity: 1;
+}
+
+/* mobile long shadow overflow bug */
+.is-mobile .shape, .is-mobile .shape:hover, .is-mobile .countdown-section, .is-mobile .ca-icon, .is-mobile .ca-menu li:hover .ca-icon {
+    text-shadow: none;
+    overflow: visible;
+}

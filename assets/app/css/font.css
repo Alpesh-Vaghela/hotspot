@@ -1,0 +1,38 @@
+/*  -------------------------------------------------------------------
+[Google webfont stylesheet]
+
+Project:    Dynasty - Responsive Coming Soon Template
+Version:    1.0
+Autor:      -SitoWeb-
+http://themeforest.net/user/-SitoWeb-
+
+
+[Table of contents]
+
+1. Roboto font
+2. Oswald font
+
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+@import url(http://fonts.googleapis.com/css?family=Oswald:300,400,700);
+
+/*-----------------------------------------------------------------
+1. Roboto font
+------------------------------------------------------------------- */
+
+body, h3, h4, h5, h6, .h3, .h4, .h5, .h6, input, button, select, textarea {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+/*-----------------------------------------------------------------
+2. Oswald font
+------------------------------------------------------------------- */
+
+.logo, h1, h2, .h1, .h2, .people-nema, .countdown-period, .countdown-section, #control-panel, .about-mini-box-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+	letter-spacing: 1px;
+}
+
